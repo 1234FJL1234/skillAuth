@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sweb-front:war">
+    <output-path>$PROJECT_DIR$/s-web/sweb-front/target</output-path>
+    <root id="archive" name="SWebFront-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="sweb-front:war exploded" />
+    </root>
+  </artifact>
+</component>

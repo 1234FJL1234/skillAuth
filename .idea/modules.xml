@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SkillAuth.iml" filepath="$PROJECT_DIR$/SkillAuth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/s-module/s-module.iml" filepath="$PROJECT_DIR$/s-module/s-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/s-web/s-web.iml" filepath="$PROJECT_DIR$/s-web/s-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/s-web/sweb-background/sweb-background.iml" filepath="$PROJECT_DIR$/s-web/sweb-background/sweb-background.iml" />
+      <module fileurl="file://$PROJECT_DIR$/s-web/sweb-front/sweb-front.iml" filepath="$PROJECT_DIR$/s-web/sweb-front/sweb-front.iml" />
+    </modules>
+  </component>
+</project>

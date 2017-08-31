@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sweb-background:war">
+    <output-path>$PROJECT_DIR$/s-web/sweb-background/target</output-path>
+    <root id="archive" name="SWebBackground-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="sweb-background:war exploded" />
+    </root>
+  </artifact>
+</component>

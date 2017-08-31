@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="s-module" />
+        <module name="sweb-background" />
+        <module name="sweb-front" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="s-module" target="1.5" />
+      <module name="s-web" target="1.5" />
+      <module name="SkillAuth" target="1.5" />
+      <module name="sweb-background" target="1.5" />
+      <module name="sweb-front" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
