@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smodule-system:war">
+    <output-path>$PROJECT_DIR$/s-module/smodule-system/target</output-path>
+    <root id="archive" name="SModuleSystem-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="smodule-system:war exploded" />
+    </root>
+  </artifact>
+</component>

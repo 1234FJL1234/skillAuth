@@ -6,17 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="s-module" />
+        <module name="smodule-core" />
+        <module name="smodule-user" />
         <module name="sweb-background" />
         <module name="sweb-front" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="s-module" target="1.5" />
-      <module name="s-web" target="1.5" />
-      <module name="SkillAuth" target="1.5" />
-      <module name="sweb-background" target="1.5" />
-      <module name="sweb-front" target="1.5" />
+      <module name="s-module" target="1.8" />
+      <module name="s-web" target="1.8" />
+      <module name="SkillAuth" target="1.8" />
+      <module name="smodule-core" target="1.8" />
+      <module name="smodule-system" target="1.5" />
+      <module name="smodule-user" target="1.8" />
+      <module name="sweb-background" target="1.8" />
+      <module name="sweb-front" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

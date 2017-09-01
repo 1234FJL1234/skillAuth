@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-4.0.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+						http://www.springframework.org/schema/mvc 
+						http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/task
+                        http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+    <!-- Spring上下文获取工具类 配置在所有的类最上面 -->
+    <!--<bean id="ctxTool1" class="com.kldaby.system.util.SpringContextTool"/>-->
+
+    <import resource="spring-jcaptcha.xml"/>
+
+    <!-- jdbc.properties文件路径,es服务器地址配置  -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:/edu/njrs/web/config/jdbc.properties</value>
+                <!-- 生产环境 将properties 合并-->
+               <!-- <value>file:${CATALINA_BASE}/appconf/application-boss.properties</value>-->
+            </list>
+        </property> <!--value="classpath:/com/kldaby/web/config/jdbc.properties" />-->
+    </bean>
+    <!-- 数据源的配置 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <!-- data source configuration -->
+        <property name="initialSize" value="10"/><!-- initial connections -->
+        <property name="maxActive" value="50"/><!-- MAX connections -->
+        <!--<property name="maxIdle" value="10" />&lt;!&ndash; MAX idle connections &ndash;&gt;-->
+        <property name="minIdle" value="5"/><!-- MIN idle connections -->
+        <!-- 处理mysql 8小时自动断开连接的问题 -->
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <property name="validationQuery" value="select 1"/>
+        <property name="timeBetweenEvictionRunsMillis" value="20000"/>
+        <property name="numTestsPerEvictionRun" value="100"/>
+    </bean>
+    <!--事务相关控制-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <context:component-scan base-package="edu.njrs;"/>
+
+    <!--启动注解 @Transactional -->
+    <tx:annotation-driven/>
+
+    <mvc:annotation-driven/>
+
+    <!-- MyBatis sqlSessionFactory 配置 mybatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation"
+                  value="classpath:/edu/njrs/web/mybatis/SqlMapConfig.xml"/>
+        <property name="dataSource" ref="dataSource"/>
+        <!--<property name="mapperLocations" value="classpath*:edu/njrs/*/mapper/**/*.xml"/>-->
+    </bean>
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- 线程池 -->
+    <!--spring线程池-->
+    <bean id="threadPool" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <!--核心线程数-->
+        <property name="corePoolSize" value="20"/>
+        <!--最大线程数-->
+        <property name="maxPoolSize" value="50"/>
+        <!--队列最大长度-->
+        <property name="queueCapacity" value="200"/>
+        <!--线程池维护线程所允许的空闲时间-->
+        <property name="keepAliveSeconds" value="300"/>
+        <!--程序关闭时等待线程执行完毕-->
+        <property name="waitForTasksToCompleteOnShutdown" value="true"/>
+    </bean>
+
+    <bean id="SpringApplicationContext" class="edu.njrs.common.util.ApplicationContextHelper"></bean>
+
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="basePackage" value="com.kldaby.deposit.mapper,-->
+        <!--com.kldaby2.marketing.dao,-->
+        <!--com.kldaby2.coupon.mapper,-->
+        <!--com.kldaby.report.dao,-->
+        <!--com.kldaby2.promotioner.dao"/>-->
+    <!--</bean>-->
+</beans>
