@@ -101,6 +101,7 @@
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.8" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.3" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.9.4" />
+          <element id="library" level="project" name="Maven: org:patchca:0.5.0" />
           <element id="library" level="project" name="Maven: com.octo.captcha:jcaptcha:1.0" />
           <element id="library" level="project" name="Maven: com.octo.captcha:jcaptcha-api:1.0" />
           <element id="library" level="project" name="Maven: com.jhlabs:imaging:01012005" />

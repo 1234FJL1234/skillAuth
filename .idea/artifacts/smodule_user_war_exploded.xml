@@ -105,6 +105,7 @@
           <element id="library" level="project" name="Maven: com.octo.captcha:jcaptcha-api:1.0" />
           <element id="library" level="project" name="Maven: com.jhlabs:imaging:01012005" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.3" />
+          <element id="library" level="project" name="Maven: org:patchca:0.5.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
