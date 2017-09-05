@@ -2,4 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
         "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
 <configuration>
+    <mappers>
+        <mapper resource="edu.njrs.mybatis.mapper/AuthorityPageMapper.xml"/>
+        <mapper resource="edu.njrs.mybatis.mapper/ManagerAuthorityMapper.xml"/>
+        <mapper resource="edu.njrs.mybatis.mapper/ManagerMapper.xml"/>
+        <mapper resource="edu.njrs.mybatis.mapper/PageMapper.xml"/>
+        <mapper resource="edu.njrs.mybatis.mapper/AuthorityMapper.xml"/>
+    </mappers>
 </configuration>

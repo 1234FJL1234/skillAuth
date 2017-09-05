@@ -70,7 +70,6 @@
             <button type="button" class="close" onclick="hidediv(this);" aria-label="Close"><span aria-hidden="true">×</span></button>
             <strong>验证码错误！</strong>
           </div>
-
         </div>
         <button class="btn btn-success btn-block" type="button" onclick="login();">登录</button>
       </form>
@@ -146,7 +145,7 @@
                         $("#login_error").css({"display":"block"});
                         $("#Patchs").click();
                     }else{
-
+//                        alert('登录成功!')
                         window.location.href="index.htm";
 
                     }

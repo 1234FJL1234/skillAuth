@@ -16,7 +16,7 @@
   <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="">
     <link href="${basePath}/resources/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
     <link href="${basePath}/resources/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
     <link href="${basePath}/resources/css/animate.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="text-muted text-xs block">欢迎您&nbsp;&nbsp;
                                     <strong class="font-bold">
-                                      admin
+                                      ${name}
                                     </strong>
                             </span>
                         </a>
@@ -50,21 +50,25 @@
                 </li>
                   <li>
                       <a href="#">
-                          <span class="nav-label">系统</span>
+                          <span class="nav-label"><i class="fa fa-cogs" aria-hidden="true"></i>系统</span>
                           <span class="fa arrow"></span>
                       </a>
                         <ul class="nav nav-second-level">
-                              <li>
-                                  <a class="J_menuItem"
-                                     href="${basePath}/login.htm">系统管理</a>
-                              </li>
+                          <li>
+                              <a class="J_menuItem"
+                                 href="${basePath}/initAuthority.htm">角色管理</a>
+                          </li>
                             <li>
                                 <a class="J_menuItem"
                                    href="#">权限管理</a>
                             </li>
                             <li>
                                 <a class="J_menuItem"
-                                   href="#">菜单管理</a>
+                                   href="${basePath}/initSetting.htm">菜单管理</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem"
+                                   href="#">操作日志</a>
                             </li>
                         </ul>
                   </li>

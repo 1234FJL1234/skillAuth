@@ -72,6 +72,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation"
                   value="classpath:/edu/njrs/web/mybatis/SqlMapConfig.xml"/>
+        <!--<property name="mapperLocations" value="classpath:edu/njrs/mybatis/mapper/*.xml"></property>-->
         <property name="dataSource" ref="dataSource"/>
         <!--<property name="mapperLocations" value="classpath*:edu/njrs/*/mapper/**/*.xml"/>-->
     </bean>
@@ -97,10 +98,7 @@
     <bean id="SpringApplicationContext" class="edu.njrs.common.util.ApplicationContextHelper"></bean>
 
     <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="com.kldaby.deposit.mapper,-->
-        <!--com.kldaby2.marketing.dao,-->
-        <!--com.kldaby2.coupon.mapper,-->
-        <!--com.kldaby.report.dao,-->
-        <!--com.kldaby2.promotioner.dao"/>-->
+        <!--<property name="basePackage" value="edu.njrs.manager.mapper,-->
+       <!--"/>-->
     <!--</bean>-->
 </beans>
